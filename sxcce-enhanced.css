@@ -1,0 +1,1153 @@
+/* ============================================
+   MODERN COLLEGE WEBSITE - ENHANCED STYLES
+   ============================================ */
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for sticky navbar */
+}
+
+/* ===== SCROLL PROGRESS INDICATOR ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #0056b3, #007bff);
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.5);
+}
+
+/* ===== ANIMATED NAVBAR (STICKY + SHRINK) ===== */
+.navbar-enhanced {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-enhanced.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-enhanced.scrolled .navbar-brand img {
+    max-height: 50px;
+    transition: max-height 0.3s ease;
+}
+
+.navbar-enhanced .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-enhanced .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-enhanced .nav-link:hover::after,
+.navbar-enhanced .nav-link.active::after {
+    width: 80%;
+}
+
+/* ===== SECTION REVEAL ANIMATIONS ===== */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for child elements */
+.section-reveal.stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.section-reveal.stagger.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-reveal.stagger.revealed > *:nth-child(1) { transition-delay: 0.1s; }
+.section-reveal.stagger.revealed > *:nth-child(2) { transition-delay: 0.2s; }
+.section-reveal.stagger.revealed > *:nth-child(3) { transition-delay: 0.3s; }
+.section-reveal.stagger.revealed > *:nth-child(4) { transition-delay: 0.4s; }
+.section-reveal.stagger.revealed > *:nth-child(5) { transition-delay: 0.5s; }
+.section-reveal.stagger.revealed > *:nth-child(6) { transition-delay: 0.6s; }
+
+/* ===== HERO SECTION ENHANCEMENTS ===== */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.hero-cta {
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ANIMATED STATISTICS COUNTER ===== */
+.stat-counter {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover .stat-counter {
+    transform: scale(1.1);
+}
+
+/* ===== ENHANCED CARD HOVER EFFECTS WITH TILT ===== */
+.card-enhanced {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.card-enhanced:hover::before {
+    left: 100%;
+}
+
+.card-enhanced:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-enhanced .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.card-enhanced:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Card tilt effect */
+.card-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* ===== BUTTON ENHANCEMENTS WITH RIPPLE EFFECT ===== */
+.btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.btn-enhanced:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Ripple effect for buttons */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ===== IMAGE HOVER EFFECTS WITH PARALLAX ===== */
+.img-enhanced {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Only apply overflow hidden to container, not the image itself */
+.img-enhanced::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 86, 179, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.img-enhanced:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.img-enhanced:hover::after {
+    opacity: 1;
+}
+
+/* Parallax effect for images - ensure it doesn't break layout */
+.img-parallax {
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure images in containers display properly */
+.card .img-enhanced,
+.card .img-parallax,
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fix for carousel images - they should not have parallax or transforms */
+.carousel .img-enhanced,
+.carousel .img-parallax,
+.carousel img {
+    transform: none !important;
+    will-change: auto !important;
+    position: static !important;
+}
+
+.carousel .img-enhanced::after {
+    display: none !important;
+}
+
+/* Ensure images maintain their aspect ratio */
+img.img-enhanced,
+img.img-parallax {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fix for images with inline styles - preserve object-fit */
+img[style*="object-fit: contain"],
+img[style*="object-fit: cover"] {
+    object-fit: var(--object-fit, contain) !important;
+}
+
+/* Ensure images in feature boxes and other containers display */
+.feature-box img,
+.gallery-item img,
+.info-box img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cursor glow effect */
+.cursor-glow {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.4), transparent);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    will-change: transform, width, height;
+    mix-blend-mode: screen;
+}
+
+.cursor-glow.active {
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+}
+
+.cursor-glow.hover {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.6), transparent);
+}
+
+/* ===== SUBTLE BACKGROUND ANIMATIONS ===== */
+.animated-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+}
+
+.animated-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gradient particles effect */
+.particles-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.particles-bg::before,
+.particles-bg::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
+    animation: float 15s ease-in-out infinite;
+    z-index: 0;
+}
+
+.particles-bg::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles-bg::after {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 7.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+/* ===== DARK MODE STYLES ===== */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --card-bg: #2d2d2d;
+    --border-color: #404040;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-enhanced {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-enhanced {
+    background: rgba(26, 26, 26, 0.95) !important;
+}
+
+[data-theme="dark"] .navbar-enhanced .nav-link {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+/* ===== CAROUSEL ENHANCEMENTS ===== */
+.carousel-enhanced .carousel-item {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-enhanced .carousel-control-prev,
+.carousel-enhanced .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.carousel-enhanced .carousel-control-prev:hover,
+.carousel-enhanced .carousel-control-next:hover {
+    background: rgba(0, 123, 255, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10001;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card-enhanced {
+        border: 2px solid currentColor;
+    }
+    
+    .btn-enhanced {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== RESPONSIVE ENHANCEMENTS ===== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .stat-counter {
+        font-size: 2rem;
+    }
+    
+    .dark-mode-toggle {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .navbar-enhanced.scrolled {
+        padding: 0.25rem 0;
+    }
+    
+    /* Disable cursor glow on mobile for performance */
+    .cursor-glow {
+        display: none;
+    }
+    
+    /* Reduce parallax intensity on mobile */
+    .img-parallax {
+        transform: none !important;
+    }
+    
+    /* Ensure all images display properly on mobile */
+    .img-enhanced,
+    .img-parallax {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+    
+    /* Simplify card tilt on mobile */
+    .card-tilt {
+        transform: none !important;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== COMPATIBILITY WITH EXISTING STYLES ===== */
+/* Ensure enhanced styles work with existing Bootstrap and custom styles */
+.card-enhanced.card {
+    /* Preserve existing card styles */
+}
+
+.stat-box.section-reveal {
+    /* Preserve existing stat-box styles */
+}
+
+/* ===== PAGE LOAD ANIMATION ===== */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Fade in page content after load */
+body.page-loaded {
+    animation: fadeInPage 0.6s ease forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== MODERN TESTIMONIALS SECTION ===== */
+.testimonials-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+    z-index: 0;
+}
+
+.testimonials-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modern Testimonial Cards */
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    color: rgba(0, 123, 255, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card img {
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto 1rem;
+}
+
+.testimonial-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.5);
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.testimonial-card h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card p:last-of-type {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+/* Star Rating */
+.testimonial-rating {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-rating i {
+    color: #ffc107;
+    font-size: 1.2rem;
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+.testimonial-rating i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-rating i:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.testimonial-rating i:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.testimonial-rating i:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Testimonial Carousel Enhancements */
+#testimonialCarousel {
+    position: relative;
+    padding: 2rem 0;
+}
+
+#testimonialCarousel .carousel-indicators {
+    bottom: -50px;
+}
+
+#testimonialCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+#testimonialCarousel .carousel-indicators button.active {
+    background-color: white;
+    transform: scale(1.3);
+}
+
+#testimonialCarousel .carousel-control-prev,
+#testimonialCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+#testimonialCarousel .carousel-control-prev:hover,
+#testimonialCarousel .carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+#testimonialCarousel .carousel-control-prev {
+    left: -25px;
+}
+
+#testimonialCarousel .carousel-control-next {
+    right: -25px;
+}
+
+/* Testimonial Grid Layout (Alternative) */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Floating Animation for Testimonials */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.testimonial-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Quote Icon */
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    opacity: 0.1;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover::after {
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+
+/* Responsive Testimonials */
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-card img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+        display: none;
+    }
+    
+    .testimonial-card::before {
+        font-size: 80px;
+        top: -10px;
+        left: 10px;
+    }
+}
+
+/* ===== YOUTUBE VIDEO EMBED FIXES ===== */
+.video-container-enhanced {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-container-enhanced iframe,
+.youtube-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+.gallery-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Fix for gallery content iframe */
+.gallery-content iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    border-radius: 8px;
+    border: none;
+    display: block;
+}
+
+/* Responsive video container */
+@media (max-width: 768px) {
+    .video-container-enhanced {
+        padding-bottom: 56.25%;
+    }
+    
+    .gallery-content iframe {
+        min-height: 200px;
+    }
+}
+
+/* Error state for YouTube videos */
+.youtube-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    z-index: 10;
+}
+
+.youtube-error-message {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.youtube-error-message h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.youtube-error-message p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+/* Hide iframe when error occurs */
+.youtube-embed.error {
+    display: none;
+}
+
+.youtube-embed.error + .youtube-fallback {
+    display: flex !important;
+}
+
+/* Loading state */
+.youtube-embed {
+    background: #000;
+    transition: opacity 0.3s ease;
+}
+
+.youtube-embed.loading {
+    opacity: 0.5;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .navbar-enhanced,
+    .dark-mode-toggle,
+    .scroll-progress,
+    .cursor-glow,
+    .page-loader {
+        display: none !important;
+    }
+    
+    .section-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ===== KEYBOARD NAVIGATION STYLES ===== */
+.keyboard-navigation *:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+.keyboard-navigation .btn:focus,
+.keyboard-navigation .nav-link:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+

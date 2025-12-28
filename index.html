@@ -1,0 +1,3830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="St. Xavier's Catholic College of Engineering (SXCCE), Nagercoil – A premier institution offering accredited engineering programmes, research opportunities, and top placements."> 
+       <title>St. Xavier's Catholic College Of Engineering</title>
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Enhanced Modern Styles -->
+    <link rel="stylesheet" href="sxcce-enhanced.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- FullCalendar JS -->
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color:#EDF2FA;
+    }
+
+    .video-background {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Set the height as needed */
+      overflow: hidden;
+    }
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+    .video-foreground iframe {
+      width: 100vw;
+      height: 56.25vw; /* Maintain 16:9 aspect ratio */
+      min-height: 100%;
+      min-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+     
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .content {
+      position: absolute;
+      top: 12.5%;
+      left: 50%;
+      width:100%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 1;
+    }
+    
+    .transparent-section {
+       
+    position: relative;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+    color: white;
+    z-index: 2;
+   /* backdrop-filter: blur(4px); /* Optional: frosted glass effect 
+    /*-webkit-backdrop-filter: blur(4px);*/
+}
+
+.transparent-section a,
+.transparent-section .nav-link,
+.transparent-section .dropdown-menu a {
+    color: white !important;
+}
+
+.transparent-section .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+}
+    .sticky-header {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.95); /* slightly transparent background */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    }
+
+    .sticky-placeholder {
+        height: 140px; /* Adjust this based on your actual logo + navbar height */
+    }
+
+    .navbar .dropdown-menu {
+        z-index: 1000; /* Ensure dropdowns appear above everything */
+    }
+    #stickyLogoSection {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    background-color: white; /* or add background image/color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#stickyLogoSection.show {
+    transform: translateY(0);
+}
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav > div {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 1rem;
+    }
+
+    .content {
+        top: 15vh; /* Adjust content position on mobile */
+        padding: 15px;
+    }
+
+    .transparent-section {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 10px; /* Add some space below the toggler */
+    }
+
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        text-align: left;
+    }
+
+    .dropdown-menu {
+        position: static; /* Display dropdown inline on mobile */
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding-left: 15px;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+        color: #333333 !important; /* Dark gray text */
+    }
+
+    .navbar-toggler {
+        display: block !important;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5em;
+        height: 1.5em;
+        background-image: url('data:image/svg+xml,%3csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3e%3cpath stroke=\'rgba(255, 255, 255, 0.8)\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' stroke-width=\'2\' d=\'M4 7h22M4 15h22M4 23h22\'/%3e%3c/svg%3e');
+    }
+
+    .collapse.navbar-collapse {
+        display: none !important;
+        width: 100%;
+    }
+
+    .collapse.navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin-top: 10px;
+    }
+
+
+
+    .sticky-placeholder {
+        height: auto; /* No fixed placeholder needed when sticky is always at top */
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+
+    .content {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+  }
+
+  nav .d-flex.flex-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  nav .d-flex.flex-wrap a {
+    font-size: 0.75rem;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  nav .d-flex:last-of-type {
+    display: none; /* hide icons if separately listed */
+  }
+
+  nav .d-flex.flex-wrap a i {
+    font-size: 14px !important;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+
+
+  .logo-section .row {
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  .logo-section .col-md-6,
+  .logo-section .col-md-3 {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 8px 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-section img {
+    width: 50% !important;
+    height: auto;
+  }
+
+  .logo-section .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    margin: 10px 0;
+    margin-left: 0 !important;
+  }
+
+  .logo-section .text-center {
+    margin: 10px 0 !important;
+  }
+
+  .logo-section .text-center span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00509d;
+  }
+
+  .logo-section .text-center .d-flex {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .logo-section .text-center img {
+    width: 50px !important;
+    height: auto;
+  }
+  
+  
+  
+  
+@media (max-width: 768px) {
+    /* Outer container background */
+    div[style*="background: url"] {
+      background-size: cover !important;
+      aspect-ratio: auto !important;
+    }
+
+    /* Vision, Mission, Newsletter, Prospectus boxes */
+    div[style*="width: 250px"][style*="height: 300px"] {
+      width: 90% !important;
+      height: auto !important;
+      margin: 20px auto !important;
+    }
+
+    /* Stats container layout */
+    .stats-container > div {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 20px !important;
+    }
+
+    .stat-box {
+      width: 80% !important;
+    }
+
+    /* Newsletter and Prospectus box positioning */
+    div[style*="margin-left:140px"] {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    div[style*="margin-right:140px"] {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+
+    /* Hide horizontal scroll */
+    div[style*="overflow-x: auto"] {
+      overflow-x: hidden !important;
+    }
+
+    /* Image scaling for responsiveness */
+    img {
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+
+@media (max-width: 768px) {
+  .college-logo {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .years-logo {
+    width: 40%;
+    max-width: 80px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+@media (max-width:768px) {
+        .sticky-header {
+        position: fixed;
+       
+        padding: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sticky-header .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sticky-header .logo-section {
+        margin-bottom: 10px;
+    }
+
+    .sticky-header .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sticky-header .nav-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    /* Set background color for the top bar */
+    
+    /* Make the navbar background more subtle and clean */
+    .navbar {
+        background-color: transparent !important;
+    }
+
+    /* Stack navbar items vertically and center them */
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: center !important;
+        font-size: 1rem !important;
+        width: 100%;
+    }
+
+    /* Styling for individual nav items */
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* Soft divider between items */
+    }
+
+    /* Styling for nav links */
+    .nav-link {
+        color: #ffffff  !important;
+        padding: 0.8rem 1.5rem !important;
+        width: 100%;
+        font-size: 1.1rem !important;
+        font-weight: 600;
+        display: block;
+        text-align: left;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover effect for nav links */
+    .nav-link:hover {
+        background-color: #005bb5 !important;
+        color: #ffffff !important;
+        transform: scale(1.05);
+    }
+
+    /* Dropdown menu background */
+    .dropdown-menu {
+        background-color: #5A99E6 !important;
+        border: none;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0;
+    }
+ 
+
+    /* Dropdown item styling */
+    .dropdown-item {
+        color: #333333 !important;
+        padding: 0.8rem 1.5rem !important;
+        font-size: 1.1rem !important;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover effect for dropdown items */
+    .dropdown-item:hover {
+        background-color: #BD9E06;
+        color: #0073E6 !important;
+        transform: scale(1.05);
+    }
+
+    /* Aligning dropdown toggle icons for better visibility */
+    .dropdown-toggle::after {
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+    }
+
+    /* Navbar toggler styling */
+    .navbar-toggler {
+        border: none;
+        background-color: #0073E6;
+    }
+
+    /* Custom toggler icon */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* Centering items properly */
+    .collapse.navbar-collapse {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Ensuring proper space and padding around the navbar toggler */
+    .navbar-toggler {
+        margin-right: 1rem !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+  </style>
+<style>
+/* Basic nested dropdown layout */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  z-index: 1000;
+}
+
+/* Show submenu when .show class is added */
+.dropdown-submenu.show > .dropdown-menu {
+  display: block;
+}
+</style>
+<style>
+.dropdown-submenu .dropdown-toggle {
+    display: flex; /* Use flexbox for better alignment */
+    align-items: center; /* Vertically center the text and arrow */
+    justify-content: space-between; /* Push arrow to the end */
+    padding-right: 1.5rem; /* Add some padding for the arrow */
+    position: relative; /* For absolute positioning of custom arrow if needed */
+}
+
+.dropdown-submenu .dropdown-toggle::after {
+    /* Remove default Bootstrap caret */
+    border: none;
+    content: "\f105"; /* Font Awesome 5 'angle-right' icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; /* For Font Awesome solid icons */
+    margin-left: 0.5rem; /* Space between text and arrow */
+    /* If you're using flexbox, you might not need float: right; */
+    /* If you're not using flexbox, keep float: right; or use absolute positioning */
+}
+
+/* Optional: Style for when the submenu is open (e.g., rotate arrow) */
+.dropdown-submenu.show > .dropdown-toggle::after {
+    /* Example: Rotate arrow downwards when submenu is active */
+    /* content: "\f107"; */ /* Font Awesome 'angle-down' icon */
+    /* transform: rotate(90deg); */ /* Or simply rotate if keeping same icon */
+}
+
+/* Ensure the top-level "Autonomous" dropdown has a standard Bootstrap caret */
+.nav-item.dropdown > .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+</style>
+
+<style>
+  @media (max-width: 767.98px) {
+    .scrolling-nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scrolling-nav a {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .social-icons {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+</style>
+<style>
+    @media (max-width: 767px) { /* This media query targets screens up to 767px wide, typically mobile phones */
+    .sticky-header {
+        /* Remove fixed positioning for mobile, allow it to scroll with content */
+        position: static !important; /* Or 'initial', 'unset'. 'static' is the default flow. */
+       top: auto !important;         /* Remove any fixed top positioning */
+        left: auto !important;      /* Remove any fixed left positioning */
+        width: 100%;                /* Ensure it still spans full width */
+        z-index: auto !important;   /* Reset z-index if it's not needed as fixed */
+        background-color: #fff;     /* Keep a background color for consistency */
+        padding: 10px 0;            /* Adjust padding as needed for mobile */
+        box-sizing: border-box;     /* Include padding in the element's total width and height */
+    }
+
+    /* Important: Remove any padding-top from body/main content that was added for a fixed header */
+    body {
+        padding-top: 0 !important;
+    }
+
+    /* Adjustments for the logos and buttons to fit better on smaller screens */
+    .sticky-header .logo-section .col-12 {
+        flex-direction: column; /* Stack logos vertically */
+        align-items: center;    /* Center them */
+        gap: 10px;              /* Reduce gap */
+    }
+
+    .sticky-header .college-logo {
+        width: 70% !important; /* Make the college logo slightly larger on mobile */
+        height: auto !important;
+    }
+
+    .sticky-header .years-logo {
+        height: 60px !important; /* Adjust height for the years logo */
+        width: auto !important;
+    }
+
+    .sticky-header .btn {
+        margin-left: 0 !important; /* Remove left margin for the admission button */
+        padding: 8px 18px !important; /* Adjust button padding */
+        font-size: 0.9rem !important; /* Slightly increase font size for readability */
+    }
+
+    .sticky-header .text-center {
+        margin-right: 0 !important; /* Remove right margin for online fee payment */
+        width: 100%; /* Make it take full width */
+        text-align: center;
+    }
+
+    .sticky-header .d-flex.align-items-center.mt-1 {
+        justify-content: center; /* Center the SBI/IOB logos */
+    }
+
+    .sticky-header img[alt="SBI Collect"] {
+        width: 70px !important; /* Adjust logo sizes */
+    }
+
+    .sticky-header img[alt="IOB"] {
+        width: 35px !important; /* Adjust logo sizes */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<style>
+
+
+@media (max-width: 768px) {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for the very top navigation (the first <nav> block) */
+/* This will be visible on desktop */
+nav:first-of-type {
+    background-color: #00509d; /* Example background color */
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1000; /* Ensure it's above other elements */
+    box-sizing: border-box;
+}
+
+nav:first-of-type .d-flex.flex-wrap a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-right: 15px; /* Adjust spacing between links */
+}
+
+/* Hide the menu toggle from this top nav (it's not needed for desktop) */
+nav:first-of-type .menu-toggle {
+    display: none;
+}
+
+/* Styles for the sticky header containing logos and the main Bootstrap nav */
+.sticky-header {
+    position: fixed; /* Keep it fixed at the top */
+    top: 50px; /* Position it exactly below the first <nav> (adjust if first nav height changes) */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Below the top nav */
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* Use flexbox to organize content vertically */
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0; /* Add padding for spacing */
+    box-sizing: border-box;
+}
+
+/* Styles for the logo section within the sticky header */
+.sticky-header .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content within the section */
+    flex-wrap: wrap;
+    width: 100%; /* Take full width */
+    padding: 0 15px; /* Add horizontal padding */
+    box-sizing: border-box;
+}
+
+.sticky-header .college-logo {
+    width: 50%; /* Original width for desktop */
+    max-width: 300px; /* Max size for desktop logo */
+    height: auto;
+    margin-right: 20px; /* Space between college logo and 26 years logo */
+}
+
+/* Default styles for 26 years logo and payment buttons (visible on desktop) */
+.sticky-header .years-logo {
+    display: block; /* Visible by default */
+    height: 100%; /* Maintain original height */
+}
+
+.sticky-header .col-md-2,
+.sticky-header .col-md-3 {
+    display: flex; /* Visible by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ensure the main Bootstrap navbar is always visible and functional on desktop */
+.sticky-header .navbar-expand-lg {
+    display: flex !important; /* Override Bootstrap default collapse behavior on desktop */
+    width: 100%;
+    justify-content: center; /* Center the nav items on desktop */
+    padding: 0;
+    margin-top: 10px; /* Space below logo section */
+}
+
+/* Add padding to the body to prevent content from going under the fixed header */
+/* Calculate this based on combined height of top nav + sticky header (logo/buttons + main nav) on desktop */
+body {
+    padding-top: 250px; /* Adjust this value (e.g., top nav height + logo section height + main nav height) */
+}
+
+
+/* --- Mobile Specific Styles (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Reset body padding for mobile, we'll control element spacing directly */
+    body {
+        padding-top: 0;
+    }
+
+    /* Hide the entire first <nav> block on mobile */
+    nav:first-of-type {
+        display: none;
+    }
+
+    /* Adjustments for the sticky header section */
+    .sticky-header {
+        position: fixed; /* Keep it fixed on screen */
+        top:0; /* Position it at the very top on mobile */
+        left: 0;
+        width: 100%;
+        z-index: 999; /* Ensure it's above other content */
+        padding: 5px 0; /* Reduced vertical padding for mobile */
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex; /* Ensure it's visible and uses flexbox */
+        flex-direction: column; /* Stack logo and menu vertically */
+        align-items: center; /* Center content horizontally */
+        box-sizing: border-box;
+    }
+
+    /* Adjustments for the logo section within the sticky header */
+    .sticky-header .logo-section {
+        width: 100%; /* Take full width */
+        padding: 5px 0; /* Add slight vertical padding */
+        display: flex;
+        justify-content: center; /* Center the logo horizontally */
+        align-items: center;
+        flex-wrap: nowrap; /* Prevent wrapping in this section */
+    }
+
+    /* College Logo styling for mobile */
+    .sticky-header .college-logo {
+        width: 70%; /* Make the college logo more prominent on mobile */
+        max-width: 220px; /* Cap its maximum size */
+        height: auto;
+       
+        margin: 0; /* Remove side margins */
+    }
+
+    /* Hide the "26 Years Logo" on mobile */
+    .sticky-header .years-logo {
+        display: none;
+    }
+
+    /* Hide the admission button and online fee payment sections on mobile */
+    .sticky-header .col-md-2,
+    .sticky-header .col-md-3 {
+        display: none;
+    }
+
+    /* Adjustments for the main Bootstrap navigation (your primary menu) */
+    .sticky-header .container-fluid.top-bar1 {
+        padding: 0;
+        margin-top: 5px; /* Add a small margin above the nav bar */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sticky-header .navbar.navbar-expand-lg {
+        display: flex; /* Use flexbox for internal layout */
+        flex-direction: column; /* Stack the toggler and collapse content vertically */
+        align-items: center; /* Center the items within the navbar */
+        background-color: #f8f9fa; /* Light background for the menu bar */
+        padding: 5px 0; /* Add vertical padding to the navbar itself */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Styling for the Bootstrap navbar-toggler (the hamburger icon) */
+    .sticky-header .navbar-toggler {
+        display: block !important; /* Force display of the toggler on mobile */
+        margin: 5px auto; /* Center the toggler button */
+        color: #00509d; /* Example color for the toggler icon */
+        border-color: #00509d; /* Example border color for the toggler */
+        outline: none; /* Remove outline on focus */
+    }
+
+    /* Styling for the hamburger icon lines within the toggler */
+    .sticky-header .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 80, 157)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Styles for the collapsible menu content (when the hamburger is clicked) */
+    .sticky-header .navbar-collapse {
+        width: 100%; /* Ensure the collapsed content takes full width */
+    }
+
+    /* Styling for the navigation list (ul) within the collapsed menu */
+    .sticky-header .navbar-nav {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center individual menu items */
+        width: 100%; /* Ensure the navigation list takes full width */
+    }
+
+    /* Styling for individual menu items (li) */
+    .sticky-header .navbar-nav .nav-item {
+        width: 100%; /* Make each nav item take full width for easier tapping */
+        text-align: center; /* Center the text within each menu item */
+    }
+
+    /* Styling for actual navigation links (a) and dropdown items */
+    .sticky-header .navbar-nav .nav-link,
+    .sticky-header .navbar-nav .dropdown-item {
+        padding: 10px 15px !important; /* Adjusted padding for better touch targets */
+        font-size: 1rem !important; /* Adjust font size for readability */
+        border-bottom: 1px solid rgba(0,0,0,0.1); /* Add a subtle separator line between items */
+        color: #333; /* Darker text color for better contrast on light background */
+        text-decoration: none; /* Remove underline */
+        display: block; /* Make the whole link area clickable */
+    }
+
+    /* Specific styling for the last menu item to remove bottom border */
+    .sticky-header .navbar-nav .nav-item:last-child .nav-link,
+    .sticky-header .navbar-nav .dropdown-menu li:last-child .dropdown-item {
+        border-bottom: none;
+    }
+
+
+    /* Styling for nested dropdown menus (like "SXCCE-An Overview", etc.) */
+    .sticky-header .navbar-nav .dropdown-menu {
+        position: static !important; /* ESSENTIAL: Prevents dropdowns from overflowing off-screen on mobile */
+        width: 100%; /* Take full width of parent */
+        box-shadow: none; /* Remove any box shadows */
+        border-radius: 0; /* Remove rounded corners */
+        background-color: #e9ecef; /* Slightly lighter background for sub-menus */
+        border: none; /* Remove border from dropdown menu itself */
+        margin: 0; /* Remove any default margins */
+        padding: 0; /* Remove any default padding */
+    }
+
+    /* Ensure that elements are correctly stacked, and no unnecessary gaps */
+    .sticky-header .content > section > .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0; /* Remove default row margins */
+    }
+}
+
+
+
+
+
+/* --- Mobile Specific Styles (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* ... (previous CSS) ... */
+
+    /* Adjustments for the sticky header section */
+    .sticky-header {
+        position: fixed;
+        top: 20px; /* Adjust this value further if needed to move the whole block down */
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        padding: 5px 0; /* Keep this general padding for the header */
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    /* Adjustments for the logo section within the sticky header  */
+    .sticky-header .logo-section {
+        width: 100%;
+        padding: 10px 0; /* Increased vertical padding for the logo section itself */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        /* Ensure no hidden overflow from the parent for the image */
+        overflow: visible; /* Explicitly set to visible if a parent has hidden overflow */
+    }
+
+    /* College Logo styling for mobile */
+    .sticky-header .college-logo {
+        width: 85%; /* Slightly increased width percentage for more visibility */
+        max-width: 100%; /* Increased max-width to allow larger display if image is wide */
+        height: auto; /* ESSENTIAL: Maintains aspect ratio */
+        margin: 0;
+        display: block; /* Ensure it behaves like a block element for width/margin */
+        /* If the image itself is cutting off, it might be due to its intrinsic aspect ratio
+           and the parent container's implicit or explicit height.
+           We're adding padding to the parent (.logo-section) to give it space.
+        */
+    }
+
+    /* ... (rest of your mobile CSS) ... */
+}
+
+
+
+
+@media (max-width: 768px) {
+    /* ... (rest of your existing mobile CSS) ... */
+
+    /* Adjustments for the logo section within the sticky header */
+    .sticky-header .logo-section {
+        width: 100%;
+        padding: 0;
+        display: flex; /* Ensure this is flex */
+        justify-content: center; /* This centers items horizontally */
+        align-items: center; /* This centers items vertically if container has height */
+        flex-wrap: nowrap;
+        overflow: visible;
+    }
+
+    /* College Logo styling for mobile */
+    .sticky-header .college-logo {
+        width: 85%;
+        max-width: 250px;
+        height: auto;
+        /* margin: top right bottom left */
+        /* Increased top margin to push it down more. Keep 'auto' for horizontal centering. */
+        margin: 180px auto 15px auto; /* Increased top margin from 10px to 20px */
+        display: block; /* Important for margin: auto to work */
+    }
+
+    /* ... (rest of your existing mobile CSS) ... */
+}
+</style>
+
+<style>
+   .sticky-header .social-icons-mobile {
+        position: absolute;
+        right: 10px;
+        top: 70%;
+        transform: translateY(-50%);
+        display: flex; /* Keep flex to manage its direct children */
+        flex-direction: column; /* THIS IS THE KEY CHANGE: Stack items vertically */
+        align-items: flex-end; /* Align items to the end (right) of the column */
+        /* You might want to adjust width or other properties if needed for spacing */
+    }
+
+    .sticky-header .social-icons-mobile a {
+        margin-left: 0; /* Remove left margin if stacked vertically */
+        margin-top: 5px; /* Add top margin for spacing between stacked icons */
+        margin-bottom: 5px; /* Add bottom margin for spacing between stacked icons */
+        font-size: 20px;
+        /* Ensure each link takes full width if you want them centered or aligned as a block */
+        width: auto; /* Or set a specific width if you prefer */
+    }
+    /* Specific adjustment for the first item to remove top margin if desired */
+    .sticky-header .social-icons-mobile a:first-child {
+        margin-top: 0;
+    }
+    /* Specific adjustment for the last item to remove bottom margin if desired */
+    .sticky-header .social-icons-mobile a:last-child {
+        margin-bottom: 0;
+    }
+    
+</style>
+
+
+
+
+
+
+<style>
+    @media (max-width: 991.98px) {
+
+/* --- Styles for the main collapsed menu container --- */
+
+.sticky-header .navbar-collapse {
+
+/* Essential for positioning correctly below a fixed/sticky header */
+
+position: absolute; /* Or 'fixed' if your header is 'fixed' */
+
+top:20px; /* IMPORTANT: This needs to be the exact height of your sticky header */
+
+/* Adjust 60px to your actual header height. */
+
+/* Using a CSS variable (--sticky-header-height) is best if you define it elsewhere. */
+
+left: 0;
+
+width: 100%;
+
+background-color: #2375C2; /* Ensure it has a background */
+
+border-top: 1px solid rgba(0,0,0,0.1);
+
+z-index: 1000; /* Ensure it's above normal content but below the main sticky header */
+
+
+/* Crucial for long menus: allow scrolling if content exceeds screen height */
+
+overflow-y: auto;
+
+/* max-height: calc(100vh - var(--sticky-header-height, 60px)); /* Optional: prevent it from going off bottom of screen */
+
+/* If your menu items are not visible even with overflow-y, try commenting out max-height */
+
+/* If still not visible, check for parent containers with overflow:hidden */
+
+}
+
+
+/* --- Ensure the sticky header itself is correctly positioned and on top --- */
+
+/* Add this if you haven't already for the .sticky-header container */
+
+.sticky-header {
+
+position: sticky; /* Or 'fixed' */
+
+top: 0;
+
+width: 100%;
+
+z-index: 1020; /* Higher than .navbar-collapse to ensure it's on top */
+
+background-color: #2375C2; /* A solid background is important */
+
+box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
+
+/* Define a CSS variable for easier management of the collapse's top position */
+
+--sticky-header-height: 60px; /* Adjust this to your actual sticky header's height */
+
+}
+
+
+/* --- Your existing styles for menu items (mostly good, but a few notes) --- */
+
+.sticky-header .navbar-nav .nav-item {
+
+width: 100%;
+
+text-align: left; /* Keep left alignment for readability */
+
+}
+
+
+.sticky-header .navbar-nav .nav-link,
+
+.sticky-header .navbar-nav .dropdown-item {
+
+padding: 15px 20px !important;
+
+font-size: 1rem !important;
+
+color: #fff !important;
+
+border-bottom: 1px solid rgba(0,0,0,0.1);
+
+display: block;
+
+width: 100%;
+
+/* Ensure no conflicting inline styles from original HTML that override these */
+
+}
+
+
+/* Style the dropdown toggle arrow consistently */
+
+.sticky-header .navbar-nav .nav-link.dropdown-toggle::after,
+
+.sticky-header .dropdown-submenu > .dropdown-item.dropdown-toggle::after {
+
+float: right;
+
+transform: rotate(0deg);
+
+transition: transform 0.2s ease-in-out;
+
+}
+
+
+.sticky-header .nav-item.dropdown.show > .nav-link.dropdown-toggle::after,
+
+.sticky-header .dropdown-submenu.show > .dropdown-item.dropdown-toggle::after {
+
+transform: rotate(180deg);
+
+}
+
+
+/* --- Nested dropdown menus adjustments --- */
+
+.sticky-header .navbar-nav .dropdown-menu {
+
+position: static !important; /* Remain static for vertical stacking */
+
+width: 100%;
+
+box-shadow: none;
+
+border-radius: 0;
+
+background-color: #e9ecef; /* Slightly lighter background for sub-menus */
+
+border: none;
+
+margin: 0;
+
+padding-left: 20px; /* Indent submenus for visual hierarchy */
+
+}
+
+
+/* Ensure specific inline colors from original HTML don't mess up submenus */
+
+.sticky-header .dropdown-menu a.dropdown-item[style*="color:#7BAEE0"] {
+
+color: #333 !important; /* Override with consistent dark color for readability */
+
+}
+
+}
+
+
+.sticky-header .container-fluid.top-bar1 {
+        padding: 0;
+        margin-top: 0; /* Remove margin-top as it's now in the same row */
+        width: auto; /* Allow width to be determined by content/flexbox */
+        box-sizing: border-box;
+        display: flex; /* Make it a flex container to hold the toggler */
+        justify-content: flex-end; /* Push toggler to the end */
+        align-items: center;
+        order: 2; /* Assign order 2 to this section (appears second/after logo) */
+        /* IMPORTANT: For this to work, your HTML MUST have the .navbar-toggler
+           directly inside this .container-fluid.top-bar1.
+           If the toggler is INSIDE the .navbar.navbar-expand-lg, you'll need to
+           move the 'order' property to that .navbar element and ensure its parent is flex. */
+    }
+</style>
+
+
+<style>
+
+@media (max-width: 1024px) {
+  /* 🔷 Background image container */
+  div[style*="background: url('assets/images/College Buildings.png')"] {
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 880px; /* Increased to fit both rows */
+    padding-top: 20px;
+    position: relative;
+  }
+
+  /* 🔷 Main row: Vision + Stats + Mission */
+  div[style*="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;"] {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 10px !important;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  /* 🔷 Vision & Mission boxes (same size) */
+  div[style*="width: 250px; height: 300px; background-color:#5474B7;"] {
+    width: 200px !important;
+    height: 260px !important;
+    padding: 12px !important;
+    margin-top: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* 🔷 Inner scrollable content in Vision/Mission */
+  div[style*="background-color: white; border-radius: 10px; padding: 10px; height: 250px;"] {
+    height: 170px !important;
+    padding: 10px !important;
+    font-size: 0.85rem;
+  }
+
+  /* 🔷 Diamond boxes (Stats) */
+  div[style*="display: flex; gap: 40px; justify-content: center;"] {
+    flex-wrap: nowrap;
+    gap: 10px !important;
+    justify-content: center;
+  }
+
+  .stat-box {
+    width: 120px !important;
+    height: 120px !important;
+    padding: 10px !important;
+    flex-shrink: 0;
+  }
+
+  .stat-box h5 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .stat-box p.stat-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  /* 🔷 Second Row: Newsletter & Prospectus */
+  .second-row-wrapper {
+    position: absolute;
+    top: 470px; /* Adjust to come under first row */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .info-box {
+    width: 200px !important;
+    height: 230px !important;
+    background-color: #5474B7;
+    opacity: 0.9;
+    border-radius: 10px;
+    padding: 12px;
+    color: #FFD700;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-box img {
+    height: 130px !important;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .info-box h5 {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
+</style>
+
+
+<style>
+@media (min-width: 768px) and (max-width: 1023px) {
+  div[style*="background: url('assets/images/College Buildings.png')"] {
+    background-size: cover !important;
+    background-position: center center !important;
+      height: 950px;
+    padding-top: 20px;
+    position: relative;
+  }
+
+  div[style*="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;"] {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .stat-box {
+    width: 120px !important;
+    height: 120px !important;
+    padding: 10px !important;
+  }
+
+  .second-row-wrapper {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 14px;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+
+/* ✅ MOBILE (≤767px): stacked & scrollable */
+@media (max-width: 767px) {
+  div[style*="background: url('assets/images/College Buildings.png')"] {
+    background-size: cover !important;
+    background-position: center center !important;
+    height: auto !important;
+    padding: 20px 10px;
+    position: relative;
+  }
+
+  div[style*="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;"] {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .stat-box {
+    width: 90% !important;
+    height: auto !important;
+    padding: 15px !important;
+    margin: 10px 0;
+  }
+
+  .stat-box h5,
+  .stat-box .stat-number {
+    font-size: 1rem !important;
+  }
+
+  .second-row-wrapper {
+    position: static !important;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .info-box {
+    width: 90% !important;
+    height: auto !important;
+    padding: 15px;
+  }
+
+  .info-box img {
+    height: auto !important;
+    max-height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+</style>
+
+
+<style>
+@media (min-width: 1025px) and (max-width: 1366px) {
+  /* 🌆 Background image container */
+  div[style*="background: url('assets/images/College Buildings.png')"] {
+    background-size: cover !important;
+    background-position: center center !important;
+    width: 100% !important;
+    height: 1350px !important; /* ⬆️ Increased to make space */
+    padding-top: 30px;
+    position: relative; /* Keep this if your Vision/Stats/Mission are absolutely positioned within it */
+  }
+
+  /* 🔷 Vision, Stats, Mission Row */
+  div[style*="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;"] {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    gap: 18px;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* If this row is meant to be on the image, and the image container is position: relative,
+       you might still need absolute positioning for this row with top/left/transform
+       to place it precisely on the building.
+       If it's block-level within the image container, it will sit at the top. */
+  }
+
+  /* 🔵 Vision and Mission cards */
+  div[style*="width: 250px; height: 300px; background-color:#5474B7;"] {
+    width: 240px !important;
+    height: 290px !important;
+    padding: 15px !important;
+  }
+
+  div[style*="background-color: white; border-radius: 10px; padding: 10px; height: 250px;"] {
+    height: 180px !important;
+    font-size: 1rem;
+  }
+
+  /* 💠 Stats Row */
+  div[style*="display: flex; gap: 40px; justify-content: center;"] {
+    flex-wrap: nowrap;
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .stat-box {
+    width: 160px !important;
+    height: 140px !important;
+    padding: 12px !important;
+  }
+
+  .stat-box h5 {
+    font-size: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* 📘📗 Newsletter & Prospectus Row */
+  .second-row-wrapper {
+    /* REMOVED: position: absolute; top; left; transform; */
+    margin-top: 20px; /* <--- NEW: This pushes it 20px below the previous sibling element (the background div) */
+    width: 95%; /* Keep width */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    /* Ensure it's centered if it's block-level, like margin: 20px auto; (if no other styles conflict) */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .info-box {
+    width: 220px !important;
+    height: 250px !important;
+    background-color: #5474B7;
+    opacity: 0.9;
+    border-radius: 10px;
+    padding: 14px;
+    color: #FFD700;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info-box img {
+    height: 140px !important;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .info-box h5 {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
+
+
+
+@media (max-width: 767.98px) {
+  .tnea-logo {
+    width: 20%; /* Example: make the image 60% of its parent's width */
+    height: auto; /* Allow height to adjust proportionally */
+  }
+</style>
+
+<style>
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    
+    .logo-section {
+        margin-top:130px!important; /* Adjust this value as needed */
+    }
+    /* Adjustments for the logo section */
+    .logo-section .col-md-7 {
+        gap: 20px !important;
+        justify-content: flex-start !important;
+        /* Add align-items if you want to baseline all items in this flex container */
+        align-items: flex-start; /* Or center, or flex-end depending on desired alignment */
+    }
+
+    .college-logo {
+        width: 55% !important;
+        max-width: 250px;
+        /* --- ADDED: Move College Logo down --- */
+        margin-top: 80px; /* Adjust this value as needed */
+    }
+
+    .years-logo {
+        height: auto !important;
+        width: 25% !important;
+        max-width: 100px;
+        /* --- ADDED: Move 26 Years Logo down --- */
+        margin-top: 80px; /* Adjust this value as needed to match or offset college logo */
+    }
+
+    /* Adjustments for the TNEA Logo */
+    .logo-section .col-md-2 {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Keep this to vertically center it */
+    }
+
+    .tnea-logo {
+        height: 80px !important;
+        width: auto !important;
+        /* If TNEA also needs to move down, add margin-top here */
+         margin-top: 80px;
+    }
+
+    /* Adjustments for Admission and Online Fee Payment section */
+    .logo-section .col-md-3 {
+        align-items: flex-end !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        /* If this entire section needs to move down */
+        /* margin-top: 10px; */ /* Uncomment and adjust if needed */
+    }
+
+    .logo-section .col-md-3 .d-flex.justify-content-between.align-items-center.flex-wrap {
+        gap: 15px !important;
+        justify-content: flex-end !important;
+    }
+
+    .logo-section .col-md-3 a.btn {
+        margin-left: 0 !important;
+    }
+
+    .logo-section .col-md-3 .text-center {
+        text-align: right !important;
+        margin-right: 0 !important;
+    }
+}
+
+</style>
+<style>
+@media (min-width: 781px) and (max-width: 991.98px) {
+    
+    
+    
+    
+    
+        .sticky-header .navbar-nav .nav-link,
+
+.sticky-header .navbar-nav .dropdown-item {
+
+
+color: #0A0A0A !important;
+
+
+
+/* Ensure no conflicting inline styles from original HTML that override these */
+
+}
+.logo-section {
+        margin-top:200px!important; /* Adjust this value as needed */
+    }
+    /* Adjustments for the logo section */
+    .logo-section .col-md-7 {
+        gap: 20px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+    }
+
+    .college-logo {
+        width: 55% !important;
+        max-width: 250px;
+        margin-top: 160px;
+    }
+
+    .years-logo {
+        height: auto !important;
+        width:25% !important;
+        max-width: 100px;
+        margin-top:100px;
+    }
+
+    .logo-section .col-md-2 {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tnea-logo {
+        height: 80px !important;
+        width: auto !important;
+      margin-top:100px;
+    }
+
+    .logo-section .col-md-3 {
+        align-items: flex-end !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .logo-section .col-md-3 .d-flex.justify-content-between.align-items-center.flex-wrap {
+        gap: 15px !important;
+        justify-content: flex-end !important;
+    }
+
+    .logo-section .col-md-3 a.btn {
+        margin-left: 0 !important;
+    }
+
+    .logo-section .col-md-3 .text-center {
+        text-align: right !important;
+        margin-right: 0 !important;
+    }
+    
+}
+</style>
+<style>
+
+@media (min-width: 993px) and (max-width: 1199.98px) {
+    
+    .logo-section {
+        margin-top: 80px !important;
+    }
+    .logo-section .col-md-7 {
+        gap: 20px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+    }
+    .college-logo {
+        width: 75% !important;
+        max-width: 250px;
+        margin-top: 80px;
+    }
+    .years-logo {
+        height: auto !important;
+        width: 25% !important;
+        max-width: 100px;
+        margin-top: 100px;
+    }
+    .logo-section .col-md-2 {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .tnea-logo {
+        height: 80px !important;
+        width: auto !important;
+        margin-top: 100px;
+    }
+    .logo-section .col-md-3 {
+        align-items: flex-end !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+    .logo-section .col-md-3 .d-flex.justify-content-between.align-items-center.flex-wrap {
+        gap: 15px !important;
+        justify-content: flex-end !important;
+    }
+    .logo-section .col-md-3 a.btn {
+        margin-left: 0 !important;
+    }
+    .logo-section .col-md-3 .text-center {
+        text-align: right !important;
+        margin-right: 0 !important;
+    }
+}
+
+</style>
+<style>
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+</style>
+<style>
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Mobile version: move button to top */
+@media(max-width:768px){
+  .icrats-button-wrapper {
+    
+   
+    top: 250px !important;
+  }
+  .icrats-button-wrapper a {
+    font-size:0.85rem;
+    padding:4px 14px;
+    border-radius:15px;
+    animation-duration:10s;
+  }
+}
+</style>
+</head>
+<body>
+ <!-- YouTube Video Background / Hero Section -->
+<div class="video-background hero-section particles-bg">
+    <video autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover;">
+        <source src="assets/videos/web3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+ <!--<div id="popup-overlay">-->
+ <!--      <div id="popup-container" style="width: 90%; max-width: 550px; padding: 20px; box-sizing: border-box;">-->
+ <!--       <button id="close-button">&times;</button>-->
+ <!--       <img id="popup-image" src="assets/images/placement.jpg" alt="Popup Image" style="width: 75%; max-width: 600px; height: auto; display: block; margin: 0 auto;">-->
+ <!--   </div>-->
+ <!--   </div>-->
+ 
+  <!-- Navigation Menu -->
+   
+<nav style="position: absolute; z-index: 1060;">
+        
+    <div style="font-size: 1.5rem;"></div>
+    <div class="d-flex flex-wrap">
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Home</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Innovation & Startup</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>IQAC</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>NIRF</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Skill Dev Prog</b></a>
+             <a class="text-white me-3 text-decoration-none" href="#"><b>Hiltek</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Alumni</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Grievance</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Student App</b></a>
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Help Desk</b></a>
+            <!--<a class="text-white me-3 text-decoration-none" href="#"><b>E-Resources</b></a>-->
+             <a class="text-white me-3 text-decoration-none" href="#"><b>E-Resources</b></a>
+           
+            
+            <a class="text-white me-3 text-decoration-none" href="#"><b>Contact Us</b></a>
+        </div>
+
+        <div class="d-flex">
+            <a class="me-2" href="https://www.facebook.com/stxaviersmedia/"><i class="fab fa-facebook" style="color: #1877F2; font-size: 20px;"></i></a>
+            <a class="me-2" href="https://x.com/i/flow/login?redirect_after_login=%2Fstxaviersmedia"><i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i></a>
+            <a class="me-2" href="https://www.instagram.com/sxcce_media/"><i class="fab fa-instagram" style="color: #C13584; font-size: 20px;"></i></a>
+            <a href="https://www.youtube.com/channel/UC_UKPT72kTTWBHqtXN5Dc7Q"><i class="fab fa-youtube" style="color: #FF0000; font-size: 20px;"></i></a>
+        </div>
+
+  </nav>
+  
+
+
+
+<div class="sticky-header" style="position: fixed; top: 130px; left: 0; width: 100%; z-index: 999; background: white;">
+  <div class="content">
+    <section class="logo-section container-fluid p-0 transparent-section">
+    <div class="row m-0 p-0 align-items-center">
+ <div class="col-12 col-md-7 d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-5 p-2">
+          <img src="assets/images/LOGO_Transparent_01.png" alt="College Logo" class="img-fluid college-logo" style="width: 50%; height: auto; ">
+  <img src="assets/images/26years.png" alt="26 Years Logo" class="img-fluid years-logo" style="height: 100%;">
+  <div class="social-icons-mobile d-md-none d-lg-none"> 
+  <a class="me-2" href="https://www.facebook.com/stxaviersmedia/"><i class="fab fa-facebook" style="color: #1877F2; font-size: 20px;"></i></a>
+            <a class="me-2" href="https://x.com/i/flow/login?redirect_after_login=%2Fstxaviersmedia"><i class="fab fa-twitter" style="color: #1DA1F2; font-size: 20px;"></i></a>
+            <a class="me-2" href="https://www.instagram.com/sxcce_media/"><i class="fab fa-instagram" style="color: #C13584; font-size: 20px;"></i></a>
+            <a href="https://www.youtube.com/channel/UC_UKPT72kTTWBHqtXN5Dc7Q"><i class="fab fa-youtube" style="color: #FF0000; font-size: 20px;"></i></a>
+        </div>
+        </div> 
+        <div class="col-md-2 d-flex justify-content-center p-1 ms-md-n3">
+             <img src="assets/images/TNEA CODE(2).png" alt="tnea" class="tnea-logo" style="height:100%;">
+        </div>
+        <div class="col-md-3 p-1 d-flex flex-column align-items-center gap-2">
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
+
+                <div class="d-flex justify-content-between align-items-center flex-wrap" style="gap: 10px;">
+
+                    <a href="#"  class="btn btn-sm" style="background-color: #00509d; color: #fff; font-weight: 600; padding: 6px 14px; font-size: 0.85rem; border-radius: 8px;margin-left: 30px;">
+                        Admission 2025-2026
+                    </a>
+
+                    <div class="text-center d-flex flex-column align-items-center" style="margin-right: 40px;">
+                        <span style="font-size: 0.85rem; font-weight: 600; color: #00509d;">Online Fee Payment</span>
+                        <div class="d-flex align-items-center mt-1">
+                            <a href="https://www.onlinesbi.sbi/sbicollect/" class="d-flex align-items-center me-3">
+                                <img src="assets/images/SBI_Collect.png" alt="SBI Collect" style="width: 80px;">
+                            </a>
+
+                            <a href="https://www.iobnet.co.in/iobpay/entry.do"  class="d-flex align-items-center">
+                                <img src="assets/images/iob1.png" alt="IOB" style="width: 40px;">
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+        
+        
+        
+<!--         <div class="icrats-button-wrapper" style="position:absolute; top:25px; width:100%; display:flex; justify-content:center; pointer-events:none;">-->
+<!--  <a href="/ICRASTS" target="_blank" -->
+<!--     style="display:inline-block; -->
+<!--            background: linear-gradient(135deg, #1a237e, #7b1fa2); -->
+<!--            color: #fff; -->
+<!--            font-weight: 700; -->
+<!--            font-size: 1rem; -->
+<!--            padding: 6px 18px; -->
+<!--            border-radius: 20px; -->
+<!--            text-decoration:none; -->
+<!--            white-space: nowrap; -->
+<!--            animation: scrollText 12s linear infinite; -->
+<!--            pointer-events:auto;">-->
+<!--    ICRASTS 2026-->
+<!--  </a>-->
+<!--</div>-->
+        
+        
+        
+    </div>
+</section>
+    <div class="container-fluid top-bar1 mt-0 transparent-section" >
+      <nav class="navbar navbar-expand-lg">
+        <div class="container px-2">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+            <ul class="navbar-nav text-center" style="font-size: 0.8rem !important;"> <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">About Us</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">SXCCE-An Overview</a></li> <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Vision & Mission</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Administration</a></li>
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Governing Council</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Recruitment Policy</a></li>
+                   
+ 
+         <li class="dropdown-submenu">
+  <a class="dropdown-item dropdown-toggle" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;" data-bs-toggle="dropdown">Service Rules</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">V-2017</a></li>
+    <li><a class="dropdown-item" href="#">V-2024</a></li>
+   
+  </ul>
+</li>
+                   
+        <li class="dropdown-submenu">
+  <a class="dropdown-item dropdown-toggle" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;" data-bs-toggle="dropdown">Financial Statement</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">2019-2020</a></li>
+    <li><a class="dropdown-item" href="##">2020-2021</a></li>
+    <li><a class="dropdown-item" href="##">2021-2022</a></li>
+    <li><a class="dropdown-item" href="##">2022-2023</a></li>
+    <li><a class="dropdown-item" href="##">2023-2024</a></li>
+      <li><a class="dropdown-item" href="##">2024-2025</a></li>
+  
+  </ul>
+</li>             
+                
+
+
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Organogram</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Admission</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Admissions 2025-2026</a></li>
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Programmes Offered</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Admission Policy</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Admission Procedure</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Fees Strucure</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Scholarships</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Merit Scholarship</a></li> 
+                  
+                  
+                  
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Academics</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Academic Schedule</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Regulations</a></li> 
+                   <li><a class="dropdown-item" href"##" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Curriculum & Syllabus</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Formats to Download</a></li> 
+                   <li><a class="dropdown-item" href"#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Forms to Download</a></li> 
+                   <li><a class="dropdown-item" href"#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Guidelines</a></li> 
+                  
+                  </ul>
+              </li>
+             <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+     style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">
+    Autonomous
+  </a>
+  <ul class="dropdown-menu">
+
+    <!-- Governing Body -->
+ <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#" style="cursor: pointer;">Governing Body </a>
+      
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+       
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <!-- Academic Council -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#" style="cursor: pointer;">Academic Council</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <!-- Finance Committee -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#" style="cursor: pointer;">Finance Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <!-- Board of Studies -->
+<li class="dropdown-submenu">
+    <a class="dropdown-item dropdown-toggle" href="#" style="cursor: pointer;">Board of Studies</a>
+    <ul class="dropdown-menu">
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'civil-submenu');">Faculty of Civil Engineering</a>
+            <ul class="dropdown-menu" id="civil-submenu" style="display: none;">
+                <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'mech-submenu');">Faculty of Mechanical Engineering</a>
+            <ul class="dropdown-menu" id="mech-submenu" style="display: none;">
+                <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'ece-submenu');">Faculty of Electronics and Communication Engineering</a>
+            <ul class="dropdown-menu" id="ece-submenu" style="display: none;">
+                <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'eee-submenu');">Faculty of Electrical Engineering</a>
+            <ul class="dropdown-menu" id="eee-submenu" style="display: none;">
+                <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'cseit-submenu');">Faculty of Computer Science and Engineering and Information Technology</a>
+            <ul class="dropdown-menu" id="cseit-submenu" style="display: none;">
+                <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'sh-submenu');">Faculty of Science and Humanities</a>
+            <ul class="dropdown-menu" id="sh-submenu" style="display: none;">
+                <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#" onclick="toggleSubmenu(event, 'mgmt-submenu');">Faculty of Management Sciences</a>
+            <ul class="dropdown-menu" id="mgmt-submenu" style="display: none;">
+                <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+                <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</li>
+
+    <!-- Other Committees -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Anti-Gender Harassment Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Grievance Redressal Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Student Affairs Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Buildings and Works Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href"#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href"#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">College Development Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href=""#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href="#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Library Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href="#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Disciplinary Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href="#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Purchase Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href="#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Staff & Faculty Development Committee</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Constitution Details</a></li>
+        <li><a class="dropdown-item" href="#">Minutes of Meetings</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Department</a> <ul class="dropdown-menu">
+                  
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">CSE</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">ECE</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">EEE</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">CIVIL</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">IT</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Mechanical</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">AI & DS</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">H & S</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">MBA</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">MCA</a></li> 
+                  
+                  
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Examinations</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Office Of the COE</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Genuineness Verification </a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Announcements</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Time Table</a></li> 
+                  
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">End Semester Examination Results</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Revaluation Results</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Review Results</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Rank list</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Examination Manual</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Instructions</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Forms</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Examination Fee</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Internal Examination</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Suggestions</a></li> 
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Research</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Research @SXCCE</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Research-Groups</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Research Forms</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Funded Projects</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Consultancy</a></li> 
+                 <li class="dropdown-submenu">
+  <a class="dropdown-item dropdown-toggle" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;" data-bs-toggle="dropdown">Research Publications</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Journal</a></li>
+    <li><a class="dropdown-item" href="#">Conference Proceedings</a></li>
+    <li><a class="dropdown-item" href="#">Patents</a></li>
+    <li><a class="dropdown-item" href="#">Books</a></li>
+  </ul>
+</li>
+
+                  <li><a class="dropdown-item" href="##" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Research SOP</a></li> 
+                  
+                  
+                  
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Facilities</a> <ul class="dropdown-menu">
+                  
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Computing Facilities</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Library</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Transport</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Hostels</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Food Court</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">St Xaviers Store</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Health Care</a></li> 
+                  
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Driving School</a></li> 
+                  
+                  <li><a class="dropdown-item" href="##" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Classrooms</a></li> 
+                  
+                  
+                  
+                  
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Placement</a> <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Training and Placement</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Vision Mission</a></li> 
+                  
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Placement Record</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Recruiters</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Career Guidance</a></li> 
+                    <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Full Stack Development Course</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">Gallery</a></li> </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="##" data-bs-toggle="dropdown" style="padding-top: 0.1rem !important; padding-bottom: 0.1rem !important; font-size: 1rem !important;">Cells and Chapters</a> <ul class="dropdown-menu">
+  
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">NON-PROFESSIONAL CELLS</a></li> 
+                       <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">PROFESSIONAL CELLS</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">SERVICE BODIES</a></li> 
+                  <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">OTHER ACTIVITIES</a></li> 
+                   <li><a class="dropdown-item" href="#" style="padding-top: 0.05rem !important; padding-bottom: 0.05rem !important; font-size: 1rem !important;">ADMINISTRATIVE CELLS</a></li> 
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  </ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      
+      
+ 
+      
+     </div>
+
+  
+  
+
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+
+ </div>
+
+
+
+
+<!--  <div class="content" style="margin-top:400px";>-->
+<!--       <div class="col-md-3 news-events" style="padding: 10px; background-color: rgba(200, 200, 200, 0); ">-->
+<!--    <div class="border-0 d-flex flex-column" style="border-radius: 20px;  height: auto; min-height: 400px;">-->
+<!--        <div class="text-center" style="border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 10px; background-color: rgba(100, 100, 100, 0.7);">-->
+<!--            <h5 class="header-title" style="color: #ffffff; font-weight: bold; margin: 0; font-size: 1.2rem;">Accreditation and Recognition</h5>-->
+<!--        </div>-->
+
+<!--        <div class="feature-container" style="padding: 10px; display: flex; flex-direction: column;">-->
+<!--            <div class="feature-box" style="display: flex; align-items: center; margin-bottom: 10px;  border-radius: 10px; padding: 8px; background-color: rgba(220, 220, 220, 0.6);">-->
+<!--                <img src="assets/images/NAAC-Logo-250x250-1.png" alt="NAAC Logo" style="width: 50px; height: auto; margin-right: 10px; object-fit: contain;">-->
+<!--                <div style="text-align: left";>-->
+<!--                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">NAAC</h6>-->
+<!--                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;">Accredited with ‘A’ Grade</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--  <div class="feature-box" style="display: flex;background-color: rgba(220, 220, 220, 0.6); align-items: center; margin-bottom: 10px;  border-radius: 10px; padding: 8px;">-->
+<!--                <img src="assets/images/nba-300x300-2.png" alt="NBA Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">-->
+<!--                <div style="text-align: left";>-->
+                    
+<!--                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">NBA</h6>-->
+<!--                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;">All UG Programs EEE, ECE & ME [Extended up to 2024-2025].</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="feature-box" style="display: flex;background-color: rgba(220, 220, 220, 0.6); align-items: center; margin-bottom: 10px;  border-radius: 10px; padding: 8px;">-->
+<!--                <img src="assets/images/UGC_India_Logo-1308889110.png" alt="UGC Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">-->
+<!--                <div style="text-align: left";>-->
+<!--                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">UGC – 2(f) & 12(B)</h6>-->
+<!--                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;">Recognized under UGC Act, 1956</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="feature-box" style="display: flex; align-items: center; background-color: rgba(220, 220, 220, 0.6); margin-bottom: 10px; border-radius: 10px; padding: 8px;">-->
+<!--                <img src="assets/images/anna1.png" alt="Affiliation Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">-->
+<!--                <div>-->
+<!--                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">Permanent Affiliation</h6>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="feature-box" style="display: flex; align-items: center; background-color: rgba(220, 220, 220, 0.6); border-radius: 10px; padding: 8px;">-->
+<!--                <img src="assets/images/research1.png" alt="Research Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">-->
+<!--                <div style="text-align: left";>-->
+<!--                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">Institute Level Research Centre</h6>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+      
+<!-- </div>-->
+<div class="container-fluid mt-3">
+  <div class="row">
+<div class="col-md-3 news-events" style="padding: 10px; background: linear-gradient(135deg, #00509d, #003366);">
+    <div class="border-0 d-flex flex-column" style="border-radius: 20px; background: linear-gradient(135deg, #00509d, #003366); height: auto; min-height: 400px;">
+        <div class="text-center" style="border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 10px;">
+            <h5 class="header-title" style="color: #ffffff; font-weight: bold; margin: 0; font-size: 1.2rem;">Accreditation and Recognition</h5>
+        </div>
+
+        <div class="feature-container" style="padding: 10px; display: flex; flex-direction: column;">
+            <div class="feature-box" style="display: flex; align-items: center; margin-bottom: 10px; background-color: #f8f9fa; border-radius: 10px; padding: 8px;">
+                <img src="assets/images/NAAC-Logo-250x250-1.png" alt="NAAC Logo" style="width: 50px; height: auto; margin-right: 10px; object-fit: contain;">
+                <div>
+                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">NAAC</h6>
+                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;">Accredited with ‘A’ Grade</p>
+                </div>
+            </div>
+
+            <div class="feature-box" style="display: flex; align-items: center; margin-bottom: 10px; background-color: #f8f9fa; border-radius: 10px; padding: 8px;">
+                <img src="assets/images/nba-300x300-2.png" alt="NBA Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">
+                <div>
+                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">NBA</h6>
+                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;"> UG Programmes EEE, ECE,MECH,CIVIL,CSE & IT Accredited </p>
+                </div>
+            </div>
+
+            <div class="feature-box" style="display: flex; align-items: center; margin-bottom: 10px; background-color: #f8f9fa; border-radius: 10px; padding: 8px;">
+                <img src="assets/images/UGC_India_Logo-1308889110.png" alt="UGC Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">
+                <div>
+                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">UGC – 2(f) & 12(B)</h6>
+                    <p style="color: #333; font-size: 0.9rem; margin-bottom: 0;">Recognized under UGC Act, 1956</p>
+                </div>
+            </div>
+
+            <div class="feature-box" style="display: flex; align-items: center; margin-bottom: 10px; background-color: #f8f9fa; border-radius: 10px; padding: 8px;">
+                <img src="assets/images/anna1.png" alt="Affiliation Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">
+                <div>
+                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">Permanent Affiliation</h6>
+                </div>
+            </div>
+
+            <div class="feature-box" style="display: flex; align-items: center; background-color: #f8f9fa; border-radius: 10px; padding: 8px;">
+                <img src="assets/images/research1.png" alt="Research Logo" style="width: 50px; height: 50px; margin-right: 10px; object-fit: contain;">
+                <div>
+                    <h6 style="color: #00509d; font-weight: bold; margin-bottom: 5px;">Institute Level Research Centre</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="col-md-6">
+        <div id="carouselExample" class="carousel slide section-reveal" data-bs-ride="carousel"
+             style="height: 100%; overflow: hidden; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+
+            <div class="carousel-inner" style="height: 100%;">
+                
+               
+               
+               
+               
+               
+                   <div class="carousel-item active" style="height: 100%;">
+                    <img src="assets/images/Cape Start-MoU Signing Ceremony.jpg"
+                         class="d-block w-100"
+                         alt="Slide 19"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5> Cape Start-MoU Signing Ceremony</h5>
+</div>
+                </div>
+               
+               
+               
+                
+                 <div class="carousel-item" style="height: 100%;">
+                    <img src="assets/images/Opening Ceremony of new premises of the Department of Computer Applications.jpg"
+                         class="d-block w-100"
+                         alt="Slide 18"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5> Opening Ceremony of new premises of the Department of Computer Applications</h5>
+</div>
+                </div>
+                
+                
+                
+                <div class="carousel-item" style="height: 100%;">
+                    <img src="assets/images/tamilkanavu1.jpg"
+                         class="d-block w-100"
+                         alt="Slide 1"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Maberum Tamil Kanavu</h5>
+</div>
+                </div>
+                
+                
+            <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/onam1.jpg"
+                         class="d-block w-100"
+                         alt="Slide 2"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Onam Celebration 2025</h5>
+</div>
+                </div>
+                     
+                     
+                         
+            <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/onam3.jpg"
+                         class="d-block w-100"
+                         alt="Slide 13"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Onam Celebration 2025</h5>
+</div>
+                </div>
+                       
+                
+                
+                  <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/indepenenceday.jpg"
+                         class="d-block w-100"
+                         alt="Slide 3"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>79th Independence Day Celebrations</h5>
+</div>
+                </div>
+                
+                   <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes.jpg"
+                         class="d-block w-100"
+                         alt="Slide 4"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Inauguration Ceremony of 28th batch of B.E & B.Tech Programmes</h5>
+</div>
+                </div>
+                
+                  <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes7.jpg"
+                         class="d-block w-100"
+                         alt="Slide 5"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Inauguration Ceremony of 28th batch of B.E & B.Tech Programmes</h5>
+</div>
+                </div>
+                    <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes9.jpg"
+                         class="d-block w-100"
+                         alt="Slide 7"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Inauguration Ceremony of 28th batch of B.E & B.Tech Programmes</h5>
+</div>
+                </div>
+                     <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes8.jpg"
+                         class="d-block w-100"
+                         alt="Slide 6"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Inauguration Ceremony of 28th batch of B.E & B.Tech Programmes</h5>
+</div>
+                </div>
+                
+                
+                 <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/inauguralmass1.jpg"
+                         class="d-block w-100"
+                         alt="Slide 8"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Inauguration Of Academic Year 2025-2026 Holy Mass</h5>
+</div>
+                </div>
+                
+                   
+                 <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/Blessing of Renovated Office.jpg"
+                         class="d-block w-100"
+                         alt="Slide 9"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>Blessing of Renovated Office</h5>
+</div>
+                </div>
+                
+
+                <div class="carousel-item " style="height: 100%;">
+                    <img src="assets/images/2wr.jpg"
+                         class="d-block w-100"
+                         alt="Slide 10"
+                         style="height: 100%; object-fit: contain;">
+                         <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>College Day Celebrations</h5>
+</div>
+                </div>
+
+                <div class="carousel-item" style="height: 100%;">
+                    <img src="assets/images/pict12.jpg"
+                         class="d-block w-100"
+                         alt="Slide 11"
+                         style="height: 100%; object-fit: contain;">
+                                              <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>College Day Celebrations</h5>
+</div>
+                </div>
+
+                <div class="carousel-item" style="height: 100%;">
+                    <img src="assets/images/pict14.jpg"
+                         class="d-block w-100"
+                         alt="Slide 12"
+                         style="height: 100%; object-fit: contain;">
+                                              <div class="carousel-caption d-none d-md-block college-day-caption-box">
+  <h5>College Day Celebrations</h5>
+</div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+        <div class="col-md-3 news-events" style="background: linear-gradient(135deg, #003366, #0059b3); border: 2px solid #003366; border-radius: 10px; height: 510px;">
+    <h5 class="text-center py-1" style="color: #ffffff; font-weight: bold; padding-top: 5px;">News & Events</h5>
+    <div class="news-marquee p-2 shadow-sm" style="background-color: #e6f0ff; border-radius: 10px; height: 610px; overflow-y: auto; margin-top: -10px;">
+        <div class="scroll-content">
+
+            <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July</div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">14</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                     Faculty & Staff Orientation Program
+                </p>
+            </div>
+
+            <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July</div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">15</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                    SXCCE- Inaugural Mass and all staff meeting
+                </p>
+            </div>
+
+            <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July</div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">16</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                    Classes for the academic year 2025–2026 are scheduled to commence on 16th July 2025.
+                </p>
+            </div>
+
+            <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">17</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  One Week  Bridge Course For First Year Students
+                </p>
+            </div>
+
+           
+           <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">21</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  One Week  FDP on Electric Vehicles & Hydrogen Fuel Cell Vehicles,Technologies,Challenges and Future Prospects
+                </p>
+            </div>
+ <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width: 50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">July </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">28</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                ICT Academy's 5-Day FDP on Android Basics with Compose
+                </p>
+            </div>
+              <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">August </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">8</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  Inauguration of First Year PG Programmes
+                </p>
+            </div>
+           
+           <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">August </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">11</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  Inauguration of the 28th batch of B.E & B.Tech Programmes
+                </p>
+            </div>
+            
+            
+            
+          <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">August </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">28</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  Inaugural Ceremony of All Professional Bodies
+                </p>
+            </div>
+            
+             <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">Sep </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">4</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                  Inauguration of  Non-Professional Cells
+                </p>
+            </div>
+      <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">Sep </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">11</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                 
+            “மாபெரும் தமிழ்க் கனவு ”
+                </p>
+                
+            </div>
+            
+       <div class="d-flex align-items-center mb-2">
+  <div class="date-box text-white text-center me-3" 
+       style=" 
+              border-radius: 6px; 
+              padding: 4px; 
+              min-width: 55px; 
+              min-height: 55px; 
+              display: flex; 
+              flex-direction: column; 
+              justify-content: center; 
+              align-items: center; 
+              box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    <div class="month" style="font-size: 0.7rem; font-weight: 500;">Sep</div>
+    <div class="day" style="font-size: 1rem; font-weight: bold;">22-26</div>
+  </div>
+  <p class="mb-0" 
+     style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+    Faculty Development Program on Artificial Intelligence and Applications in Management.
+  </p>
+</div>
+       <div class="d-flex align-items-center mb-2">
+                <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="month" style="font-size: 0.8rem;">Oct </div>
+                    <div class="day" style="font-size: 1.2rem; font-weight: bold;">11</div>
+                </div>
+                <p class="mb-0" style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+                 SHAX Installation Ceremony
+                </p>
+            </div>
+           
+           
+           
+         <div class="d-flex align-items-center mb-2">
+  <div class="date-box text-white text-center me-3" style="background-color: #003366; border-radius: 6px; padding: 4px; min-width:50px; min-height: 50px; display: flex; flex-direction: column; justify-content: center;">
+    <div class="month" style="font-size: 0.8rem;">Oct</div>
+    <div class="day" style="font-size: 1.2rem; font-weight: bold;">23</div>
+  </div>
+  <a href="#" target="_blank" style="text-decoration: none; flex-grow: 1;">
+    <p class="mb-0" style="color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+      Junior Calida Festa 2025
+    </p>
+  </a>
+</div>
+        
+        
+        
+          <div class="d-flex align-items-center mb-2">
+  <div class="date-box text-white text-center me-3" 
+       style=" 
+              border-radius: 6px; 
+              padding: 4px; 
+              min-width: 55px; 
+              min-height: 55px; 
+              display: flex; 
+              flex-direction: column; 
+              justify-content: center; 
+              align-items: center; 
+              box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    <div class="month" style="font-size: 0.7rem; font-weight: 500;">March</div>
+    <div class="day" style="font-size: 1rem; font-weight: bold;">12-14</div>
+  </div>
+  <a href="#" target="_blank" style="text-decoration: none; flex-grow: 1;">
+  <p class="mb-0" 
+     style="flex-grow: 1; color: #003366; background-color: #cce0ff; padding: 6px 10px; border-radius: 6px; font-weight: 600;">
+  2nd International Conference on ICCCDA'26
+  </p>
+  </a>
+</div>
+        
+        
+           
+           
+           
+
+        </div>
+    </div>
+</div>
+    </div>
+</div>  
+<div class="scholarship-marquee my-3" style="width: 100%; height: 40px; overflow: hidden; border-radius: 0;">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    
+    ✦ <strong>Admissions Open for 2025-2026! Apply Now.</strong> - Admissions for the upcoming academic year are open. 
+    ✦ <strong>St. Xavier's Catholic College of Engineering has been officially recognized as a Research Institute by Anna University, effective from July 2024.</strong> 
+  </marquee>
+</div>
+
+<!-- Stats Section -->
+
+
+<div style="
+  background: url('assets/images/College Buildings.png') no-repeat center center;
+  background-size: contain;
+  aspect-ratio: 15 / 4;
+  width: 100%;margin-top: -15px;
+">
+
+ <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+    <!-- Background image -->
+   
+<div style="width: 250px; height: 300px; background-color:#5474B7; margin-top:  80px;opacity:0.8; border-radius: 10px; padding: 15px; color: #FFD700; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)'">
+  <h5 style="margin-bottom: 10px;">Vision</h5>
+  <div style="background-color: white; border-radius: 10px; padding: 10px; height: 250px; width: 100%; overflow-y: auto; color: #2e4a7d; font-size: 1em; text-align: justify;">
+    To be an institution of eminence of optimal human development, excellent engineering education and pioneering research towards developing a technically-empowered humane society.
+  </div>
+</div>
+    <!-- Overlay content -->
+    <div class="stats-container section-reveal stagger animated-bg" style="position: relative; z-index: 1; color: white;padding: 40px;margin-top:  40px;">
+        <!-- Total Courses -->
+<!--      <div class="stat-box" style="background: #e6e6fa;opacity:0.9; padding: 20px; border-radius: 10px; width: 160px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">-->
+<!--    <div class="stat-content">-->
+<!--        <div class="stat-icon text-success">-->
+<!--            <i class="fas fa-university"></i>-->
+<!--        </div>-->
+<!--        <h5>UG Programmes</h5>-->
+<!--        <p class="stat-number" data-target="7">0</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- PG Programmes -->
+<!--<div class="stat-box" style="background: #e6e6fa;opacity:0.9; padding: 20px; border-radius: 10px; width: 160px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">-->
+<!--    <div class="stat-content">-->
+<!--        <div class="stat-icon" style="color: #800080;"> <!-- Changed to purple -->
+<!--            <i class="fas fa-user-graduate"></i>-->
+<!--        </div>-->
+<!--        <h5>PG Programmes</h5>-->
+<!--        <p class="stat-number" data-target="8">0</p>-->
+<!--    </div>-->
+<!--</div>-->
+<div style="display: flex; gap: 40px; justify-content: center;">
+    
+        <div class="stat-box" style="background: #e6e6fa;opacity:0.9; padding: 20px; border-radius: 10px; width: 160px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); gap:20px; ">
+            <div class="stat-content">
+                <div class="stat-icon text-info">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h5>Total Students</h5>
+                <p class="stat-number" data-target="2564" style="color: #007bff;">0</p>
+            </div>
+        </div>
+
+        <!-- Total Staff -->
+        <div class="stat-box" style="background: #e6e6fa;opacity:0.9; padding: 20px; border-radius: 10px; width: 160px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div class="stat-content">
+                <div class="stat-icon text-warning">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h5>Total Staff</h5>
+                <p class="stat-number" data-target="319" >0</p>
+            </div>
+        </div>
+
+        <!-- Staff with PhD -->
+       <div class="stat-box" style="background: #e6e6fa;opacity:0.9; padding: 20px; border-radius: 10px; width: 160px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div class="stat-content">
+                <div class="stat-icon text-danger">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h5>Faculty with PhD</h5>
+                <p class="stat-number" data-target="102" style="color:#007bff;">0</p>
+            </div>
+        </div>
+    </div>
+    </div>
+  <div style="width: 250px; height: 300px; background-color:#5474B7; margin-top: 80px;opacity:0.8; border-radius: 10px; padding: 15px; color: #FFD700; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)'">
+  <h5 style="margin-bottom: 10px;">Mission</h5>
+  <div style="background-color: white; border-radius: 10px; padding: 10px; height: 250px; width: 100%; overflow-y: auto; color: #2e4a7d; font-size: 1em; text-align: justify;">
+   To transform the (rural) youth into top class professionals and technocrats willing to serve local and global society with ethical integrity, by providing vibrant academic experience of learning, research and innovation and stimulating opportunities to develop personal maturity and professional skills, with inspiring and high caliber faculty in a quality and serene infrastructural environment.
+  </div>
+</div>
+
+</div>
+
+<!-- Stats Section -->
+
+<div style="overflow-x: auto; padding: 20px; margin-top: 10px;">
+
+
+  <div style="display: flex; flex-wrap: nowrap; gap: 20px; min-width: 50px; justify-content: space-evenly; ">
+
+    <!-- Box 1 - Vision -->
+
+
+    <!-- Box 4 - Newsletter -->
+    <div style="width: 250px; height: 300px;opacity:0.8; background-color: #5474B7; border-radius: 10px;  margin-right:140px; padding: 15px;margin-top: 120px; color: #FFD700; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)'">
+      <h5 style="margin-bottom: 10px;">Newsletter</h5>
+      <a href="#" >
+        <img src="assets/images/SXCCE-CAMPUS-CONNECT-March-2025.jpg" alt="Newsletter" style="width: auto; height: 250px; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+      </a>
+    </div>
+
+    <!-- Box 5 - Prospects -->
+<!--  <div style="width: 250px; height: 300px; background-color: #5474B7;opacity:0.8; border-radius: 10px; padding: 15px; color: #FFD700; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease; margin-top: 130px;" onmouseover="this.style.transform='translateY(-10px) scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)'">-->
+<!--  <h5 style="margin-bottom: 10px;">Prospectus</h5>-->
+<!--  <a href="assets/files/Prospectus.pdf" target="_blank">-->
+<!--    <img src="assets/images/Prospectus.png" alt="Prospects" style="width: auto; height: 250px; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">-->
+<!--  </a>-->
+<!--</div>-->
+
+     <!--Box 6 - Mandatory Disclosure -->
+    <div style="width: 250px; height: 300px; background-color: #5474B7;opacity:0.8; border-radius: 10px; padding: 15px;margin-left:140px; margin-top: 120px;color: #FFD700; text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)'">
+      <h5 style="margin-bottom: 10px;">Prospectus</h5>
+      <a href="assets/images/St.Xaviers-Prospectus-2025-2026.pdf" >
+        <img src="assets/images/Prospectus.png" alt="Mandatory Disclosure" style="width: auto; height: 250px; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<section class="container my-5">
+<div class="text-center">
+  <h4 style="font-weight: bold; color: white; background-color: #0d47a1; margin-top: -20px; padding: 10px 20px; display: inline-block; border-radius: 8px;">
+    Our Programmes
+  </h4>
+</div>
+
+
+    <h5 class="mb-4" style="color: #0d47a1;">Undergraduate Programmes (UG)</h5>
+
+    <div class="row g-4">
+  
+        <div class="col-md-6 program-card">
+            <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/CSE.jpg" alt="CSE" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Computer Science and Engineering (CSE)</h6>
+                    <p style="margin: 0;">Year of Establishment 1998, Sanctioned Intake 180</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/IT.jpg" alt="IT" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Information Technology (IT)</h6>
+                    <p style="margin: 0;">Year of Establishment 2001, Sanctioned Intake 60</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/ECE.jpg" alt="ECE" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Electronics and Communication Engineering (ECE)</h6>
+                    <p style="margin: 0;">Year of Establishment 1998, Sanctioned Intake 120</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/EEE.jpg" alt="EEE" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Electrical and Electronics Engineering (EEE)</h6>
+                    <p style="margin: 0;">Year of Establishment 1998, Sanctioned Intake 60</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/Mech.jpg" alt="MECH" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Mechanical Engineering (MECH)</h6>
+                    <p style="margin: 0;">Year of Establishment 2003, Sanctioned Intake 120</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/Civil.jpg" alt="CIVIL" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Civil Engineering</h6>
+                    <p style="margin: 0;">Year of Establishment 1999, Sanctioned Intake 30</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 program-card">
+              <a href="#" style="text-decoration: none; color: inherit;">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/Civil.jpg" alt="AI" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Artificial Intelligence & Data Science(AI & DS)</h6>
+                    <p style="margin: 0;">Year of Establishment 2022, Sanctioned Intake 120</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+           <div class="col-md-6 program-card">
+            <div style="background: #e3f2fd; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;" class="d-flex flex-md-row flex-column">
+                <div style="flex: 1;">
+                    <img src="assets/images/Civil.jpg" alt="CYBER SECURITY" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 2; padding: 20px;">
+                    <h6 style="font-weight: bold;color: #0d47a1;">Computer Science and Engineering(Cyber Security)</h6>
+                    <p style="margin: 0;">Year of Establishment 2025, Sanctioned Intake 60</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <h5 class="mt-5 mb-4" style="color: #0d47a1;">Postgraduate Programmes (PG)</h5>
+<div class="row g-4">
+    <!-- Template for all PG programs with compact size -->
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/energy.png" alt="Energy Engineering" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px 0 0 12px;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Energy Engineering</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2010, Sanctioned Intake 18</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/images.jpeg" alt="CSE PG" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Computer Science and Engineering</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2010, Sanctioned Intake 24</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/communication.jpeg" alt="Communication Systems" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Communication Systems</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2011, Sanctioned Intake 24</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/power.jpeg" alt="Power Electronics" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Power Electronics and Drives</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2012, Sanctioned Intake 12</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/med.jpg" alt="Medical Electronics" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Medical Electronics</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2012, Sanctioned Intake 09</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/stru.jpeg" alt="Structural Engineering" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. Structural Engineering</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2013, Sanctioned Intake 18</p>
+            </div>
+        </div>
+    </div>
+    
+    
+     <div class="col-md-6 program-card">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/vlsi.png" alt="VLSI Design" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">M.E. VLSI Design </h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2025, Sanctioned Intake 18</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="col-md-6 program-card">
+        <a href="#" style="text-decoration: none; color: inherit;">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/mba1.jpeg" alt="MBA" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">Master of Business Administration (MBA)</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2007, Sanctioned Intake 120</p>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="col-md-6 program-card">
+          <a href="#" style="text-decoration: none; color: inherit;">
+        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 150px;" class="d-flex flex-md-row flex-column">
+            <div style="flex: 1; height: 150px; overflow: hidden;">
+                <img src="assets/images/comp.jpg" alt="MCA" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 2; padding: 12px;">
+                <h6 style="font-weight: bold; color: #0d47a1; font-size: 16px;">Master of Computer Applications (MCA)</h6>
+                <p style="margin: 0; font-size: 14px;">Year of Establishment 2009, Sanctioned Intake 60</p>
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
+
+</div>
+</section>
+<div class="container-fluid testimonials-section py-3 section-reveal animated-bg">
+   <div class="row justify-content-center text-center mb-2">
+        <h2 class="section-title text-white" style="font-size: 1.8em; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+            Gallery
+        </h2>
+    </div>
+</div>
+
+<div class="gallery-container" style="margin-top:-10px;">
+    <!-- 📷 Image Gallery -->
+    <div class="gallery-card" >
+        <h3 class="gallery-subheading">Image Gallery</h3>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/images/79th Independence Day Celebrations.jpg" alt="Gallery Image 8"></div>
+                
+                 <div class="swiper-slide"><img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes1.jpg" alt="Gallery Image 1"></div>
+                  <div class="swiper-slide"><img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes2.jpg" alt="Gallery Image 2"></div>
+                  <div class="swiper-slide"><img src="assets/images/Inauguration of the 28th batch of B.E & B.Tech Programmes5.jpg" alt="Gallery Image 2"></div>
+                <div class="swiper-slide"><img src="assets/images/College-Day.jpg" alt="Gallery Image 2"></div>
+                <div class="swiper-slide"><img src="assets/images/College-Dayb.jpg" alt="Gallery Image 3"></div>
+                <div class="swiper-slide"><img src="assets/images/Sports-Day-2025c.jpg" alt="Gallery Image 4"></div>
+                <div class="swiper-slide"><img src="assets/images/College-Dayd.jpg" alt="Gallery Image 5"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a href="#" class="read-more">View More →</a>
+    </div>
+    
+     <div class="gallery-card">
+        <h3 class="gallery-subheading">Video Gallery</h3>
+        <div class="gallery-content video-container-enhanced">
+            <!-- Try channel playlist embed instead of single video -->
+            <iframe 
+                src="https://www.youtube.com/embed/videoseries?list=UU_UKPT72kTTWBHqtXN5Dc7Q&index=1" 
+                title="SXCCE Video Gallery" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                loading="lazy"
+                class="youtube-embed"
+                id="youtubeGalleryEmbed">
+            </iframe>
+            <!-- Fallback message -->
+            <div class="youtube-fallback" style="display: none;">
+                <div class="youtube-error-message">
+                    <i class="fab fa-youtube fa-3x mb-3" style="color: #FF0000;"></i>
+                    <h4>Watch Our Videos on YouTube</h4>
+                    <p>Click below to visit our YouTube channel</p>
+                    <a href="https://www.youtube.com/@st.xavierscatholiccollege" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary btn-enhanced mt-3">
+                        <i class="fab fa-youtube me-2"></i>Visit YouTube Channel
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.youtube.com/@st.xavierscatholiccollege" target="_blank" rel="noopener noreferrer" class="read-more">View More →</a>
+    </div>
+    <!-- 📰 Media Gallery -->
+    <div class="gallery-card">
+        <h3 class="gallery-subheading">Media Gallery</h3>
+        <div class="swiper newspaperSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="assets/images/ictacademcyawardc.jpeg" alt="News Event 11" ></div>
+              
+                 <div class="swiper-slide"><img src="assets/images/ictacademcyaward.jpeg" alt="News Event 11" ></div>
+                  <div class="swiper-slide"><img src="assets/images/ictacademcyawarda.jpeg" alt="News Event 12" ></div>
+               <div class="swiper-slide"><img src="assets/images/Independence day celebrations 2025.jpeg" alt="News Event 10" ></div>
+              <div class="swiper-slide"><img src="assets/images/XMA Inauguration 2025.jpeg" alt="News Event 9" ></div>
+                <div class="swiper-slide"><img src="assets/images/first year inauguration 2025.jpg" alt="News Event 5" ></div>
+                <div class="swiper-slide"><img src="assets/images/first year inauguration 2025a.jpg" alt="News Event 6"></div>
+                 <div class="swiper-slide"><img src="assets/images/first year inauguration 2025b.jpg" alt="News Event 7"></div>
+                   <div class="swiper-slide"><img src="assets/images/first year inauguration 2025c.jpg" alt="News Event 8" ></div>
+               
+                <div class="swiper-slide"><img src="assets/images/Yoga Day2025.jpg" alt="News Event 4"></div>
+                <div class="swiper-slide"><img src="assets/images/IMG-20250328-WA0005.jpg" alt="News Event 1"></div>
+                <div class="swiper-slide"><img src="assets/images/news.jpg" alt="News Event 2"></div>
+                <div class="swiper-slide"><img src="assets/images/IMG-20250328-WA0005.jpg" alt="News Event 3"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a href="#" class="read-more">View More →</a>
+    </div>
+
+    <!-- 🎥 Video Gallery -->
+ 
+</div>
+
+<div class="container-fluid testimonials-section py-5 section-reveal animated-bg">
+  <div class="row justify-content-center text-center mb-5">
+    <div class="col-12">
+      <h2 class="section-title text-white" style="font-size: 2.5em; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); margin-bottom: 1rem;">
+        <i class="fas fa-quote-left me-2"></i>Testimonials<i class="fas fa-quote-right ms-2"></i>
+      </h2>
+      <p class="text-white" style="font-size: 1.2em; opacity: 0.9;">What Our Alumni Say About Us</p>
+    </div>
+  </div>
+
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    
+    <!-- Dots -->
+    <div class="carousel-indicators mb-0">
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <div class="carousel-inner mt-3">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+          <!-- Testimonial 1 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/Sundaram.jpg" alt="Sundaram" class="rounded-circle border border-primary mb-3">
+              <p>"St. Xavier's College has given me the best academic and extracurricular opportunities. I'm grateful for everything!"</p>
+              <h5>Sundaram</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>Computer Science Alumni</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/Adri-Jovin.jpg" alt="Adri Jovin" class="rounded-circle border border-primary mb-3">
+              <p>"A wonderful college with great support from faculty and staff. It's a place where you can really grow!"</p>
+              <h5>Adri Jovin</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>Information Technology Alumni</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/Jack-1.jpeg" alt="Jack Arun" class="rounded-circle border border-primary mb-3">
+              <p>"The college fosters not only academic excellence but also helps build personal skills."</p>
+              <h5>Jacks Arun Kumar</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>Computer Science Alumni</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+          <!-- Testimonial 4 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/vishnu1.png" alt="Vishnu" class="rounded-circle border border-primary mb-3">
+              <p>"Faculty members are approachable and supportive. The campus life is vibrant!"</p>
+              <h5>Vishnu</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>ECE Alumni</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/vishnu.png" alt="Leon Raj" class="rounded-circle border border-primary mb-3">
+              <p>"I gained hands-on experience in labs and real projects. Best place to learn!"</p>
+              <h5>Leon Raj</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>CIVIL Alumni</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/john.png" alt="John winsly" class="rounded-circle border border-primary mb-3">
+              <p>"Xavier's has been a launchpad for my career. The support system is unmatched!"</p>
+              <h5>John winsly</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>Mechanical Alumni</p>
+            </div>
+          </div>
+           <!-- Testimonial 7-->
+           
+          
+          
+          
+        </div>
+      </div>
+      
+      
+       <div class="carousel-item">
+        <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/muthukumar.jpg" alt="T.Muthu Kumar" class="rounded-circle border border-primary mb-3">
+              <p>"I experienced an enriching academic journey that laid the foundation for my career in Electrical and Electronics Engineering."</p>
+              <h5>T.Muthu Kumar</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>EEE Alumni</p>
+            </div>
+          </div>
+          
+           <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/ramya.jpg" alt="Ramya S" class="rounded-circle border border-primary mb-3">
+              <p>"I will always cherish the mentorship, learning, and vibrant academic spirit that shaped my time at St. Xavier's College"</p>
+              <h5>Ramya S</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>MBA Alumni</p>
+            </div>
+          </div>
+          
+            <div class="col-md-4 col-sm-6 mb-4">
+            <div class="testimonial-card p-4 shadow-lg rounded text-center">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <img src="assets/images/ayanesh.jpg" alt="Ayanesh" class="rounded-circle border border-primary mb-3">
+              <p>"The excellent facilities and the inspiring atmosphere made it a great place to grow academically and personally."</p>
+              <h5>Ayanesh</h5>
+              <p><i class="fas fa-graduation-cap me-2"></i>EEE Alumni</p>
+            </div>
+          </div>
+          
+          
+          
+       </div>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+<div id="footer">
+
+<div class="text-center">
+  <h4 style="font-weight: bold; color: white; background-color: #0056b3; margin-top: 20px; padding: 10px 20px; display: inline-block;  width:100%; margin-bottom:0px;">
+    Important Links
+  </h4>
+</div>
+<div class="container-fluid links-section py-4 section-reveal animated-bg">
+ 
+    <div class="row justify-content-start" style="margin-left:20px; "> <!-- Aligning links left side -->
+        <div class="col-md-3">
+            <ul class="links-list">
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">NIRF</a></li>
+                <li><a href="#">NAAC</a></li>
+                <li><a href="#">NBA</a></li>
+                <li><a href="#">UGC – 2(f) & 12(B)</a></li>
+                <li><a href="#">Newsletter</a></li>
+            </ul>#
+        </div>
+
+        <div class="col-md-3">
+            <ul class="links-list">
+                <li><a href="#">Institute Level Research Centre</a></li>
+                <li><a href="#">AICTE EOA</a></li>
+                <li><a href="#">Mandatory Disclosures</a></li>
+                <li><a href="#">Audited Statement</a></li>
+                <li><a href="#">IQAC</a></li>
+                 <li><a href="#">Contact Us</a></li>
+ <!--                <li><a href="#">-->
+ <!--moodle</a></li>-->
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <ul class="links-list">
+                <li><a href="#">COVID-19 Grievances</a></li>
+                <li><a href="#">SXCCE – Infrastructural Facilities – Video</a></li>
+                <li><a href="#">Memorandum of Understanding (MoU)</a></li>
+                <li><a href="#">Programmes Offered</a></li>
+                <li><a href="#">AICTE – Centralized Support System</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <ul class="links-list">
+                <li><a href="#">Unnat Bharat Abhiyan (UBA)</a></li>
+                <li><a href="#">Grievances</a></li>
+                <li><a href="#">Anti Ragging</a></li>
+                <li><a href="#">Prospectus</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Placement Cell</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section (Common Footer for all pages) -->
+<div class="container-fluid top-bar py-3" style="color: white; ">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="links text-center">
+            Copyright © Astlin Dijo
+        </div>
+    </div>
+</div>
+</div>   <!-- Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Enhanced Modern JavaScript (Vanilla JS - No jQuery dependency) -->
+   <script src="sxcce-enhanced.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize the calendar in the #calendar div
+        $('#calendar').fullCalendar({
+            events: [
+                {
+                    title: '📢 Admissions Open for 2025-2026! Apply Now.',
+                    start: '2025-04-02',
+                    description: 'Admissions for the upcoming academic year are open.',
+                },
+                {
+                    title: '🎓 Graduation Ceremony on April 1, 2025.',
+                    start: '2025-04-01',
+                    description: 'The Graduation Ceremony will take place on this day.',
+                },
+                {
+                    title: '🏆 Sports Meet 2025 scheduled for April.',
+                    start: '2025-04-10',
+                    description: 'Join us for the annual sports meet.',
+                },
+                {
+                    title: '📖 Guest Lecture on AI & ML – Register Now!',
+                    start: '2025-04-02',
+                    description: 'Register for the upcoming guest lecture on AI & ML.',
+                },
+                {
+                    title: '🛠️ Hackathon 2025 – Get Ready!',
+                    start: '2025-05-01',
+                    description: 'Hackathon event, get ready for some coding challenges!',
+                }
+            ],
+            // Set the initial view to 'agendaDay' for day-wise view
+            defaultView: 'agendaDay',
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'agendaDay,agendaWeek,month'
+            },
+            eventClick: function(event) {
+                alert('Event: ' + event.title + '\nDescription: ' + event.description);
+            }
+        });
+    });
+</script>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.stat-number');
+
+    counters.forEach(counter => {
+        let target = +counter.getAttribute('data-target');
+        let count = 0;
+        let increment = Math.ceil(target / 100); // Adjust speed
+
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                counter.innerText = count;
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.innerText = target; // Ensure final correct number
+            }
+        };
+
+        counter.innerText = "0"; // Start from 0
+        setTimeout(updateCount, 500); // Start after a short delay
+    });
+});
+</script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    var imageSwiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    var newspaperSwiper = new Swiper(".newspaperSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+<script>
+    var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1, // Show only one diamond at a time
+        loop: true, // Infinite loop
+        autoplay: {
+            delay: 2000, // Change every 2 seconds
+            disableOnInteraction: false, // Keep autoplay even if user interacts
+        },
+        effect: "fade", // Smooth fading transition
+        fadeEffect: {
+            crossFade: true,
+        },
+    });
+</script>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const closeBtn = document.getElementById('closePopup');
+        const popup = document.getElementById('placementPopup');
+        const mainContent = document.getElementById('mainContent');
+
+        closeBtn.addEventListener('click', function () {
+            popup.style.display = 'none';
+            mainContent.style.display = 'block';
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoSection = document.querySelector('.logo-section');
+        const logoInner1 = document.querySelector('.logo-section > .row');
+        const menu = document.querySelector('.top-bar1');
+        const menuOffsetTop = menu.offsetTop;
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= menuOffsetTop) {
+                logoInner1.classList.add('logo-inner-fixed');
+                menu.classList.add('menu-sticky');
+                // Adjust padding-top of the body to prevent content overlap
+                document.body.style.paddingTop = logoInner1.offsetHeight + menu.offsetHeight + 'px';
+            } else {
+                logoInner1.classList.remove('logo-inner-fixed');
+                menu.classList.remove('menu-sticky');
+                document.body.style.paddingTop = '0';
+            }
+        });
+    });
+</script>
+ <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupOverlay = document.getElementById('popup-overlay');
+            const closeButton = document.getElementById('close-button');
+
+            // Show the popup on page load
+            popupOverlay.classList.remove('hidden');
+
+            // Close the popup when the close button is clicked
+            closeButton.addEventListener('click', function() {
+                popupOverlay.classList.add('hidden');
+            });
+
+            // Optional: Close the popup when clicking outside the container
+            popupOverlay.addEventListener('click', function(event) {
+                if (event.target === popupOverlay) {
+                    popupOverlay.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const logoSection = document.getElementById('logoSection');
+        const navbar = document.querySelector('.top-bar1');
+
+        if (window.scrollY > 50) {
+            logoSection.style.display = 'none';
+            navbar.classList.add('sticky-nav');
+        } else {
+            logoSection.style.display = 'block';
+            navbar.classList.remove('sticky-nav');
+        }
+    });
+</script>
+<script>
+    // Get the header element
+    const stickyHeader = document.querySelector('.sticky-header');
+
+    // When the page is scrolled, change the header position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 130) { // When the user scrolls down 120px
+            stickyHeader.style.top = '0px'; // Change to top: 0px
+        } else {
+            stickyHeader.style.top = '130px'; // Revert to top: 120px
+        }
+    });
+</script>
+<script>
+  document.querySelectorAll('li[style*="position: relative;"]').forEach(function (submenu) {
+    submenu.addEventListener('mouseenter', function () {
+      submenu.querySelector('ul').style.display = 'block';
+    });
+    submenu.addEventListener('mouseleave', function () {
+      submenu.querySelector('ul').style.display = 'none';
+    });
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const submenuTriggers = document.querySelectorAll('.dropdown-submenu > a.dropdown-toggle');
+
+  submenuTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      e.stopPropagation(); // Prevent bubbling
+
+      const parent = this.parentElement;
+
+      // Close all other submenus
+      document.querySelectorAll('.dropdown-submenu').forEach(item => {
+        if (item !== parent) item.classList.remove('show');
+      });
+
+      // Toggle current submenu
+      parent.classList.toggle('show');
+    });
+  });
+
+  // Close submenus if clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown-submenu').forEach(item => {
+      item.classList.remove('show');
+    });
+  });
+});
+</script>
+
+<script>
+    function toggleSubmenu(event, submenuId) {
+        event.preventDefault(); // Prevent the default link behavior (e.g., navigating to #)
+
+        // Hide all submenus first
+        const allSubmenus = document.querySelectorAll('.dropdown-menu[id$="-submenu"]');
+        allSubmenus.forEach(submenu => {
+            if (submenu.id !== submenuId) { // Don't hide the one we want to show
+                submenu.style.display = 'none';
+            }
+        });
+
+        // Toggle the display of the clicked submenu
+        const targetSubmenu = document.getElementById(submenuId);
+        if (targetSubmenu.style.display === 'none') {
+            targetSubmenu.style.display = 'block';
+        } else {
+            targetSubmenu.style.display = 'none';
+        }
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>
